@@ -124,7 +124,7 @@ You should prioritise the first two videos in this sequence.
 Some possible answers / points to consider:
 
 * Neural networks exploit **nonlinearity**, which allows them to express a much wider set of possible functions, whereas linear regression is relatively limited.
-* Neural networks automatically learn feature representations from data, allowing them to approximate functions of far greater complexity than those hand-designed in statistical models like linear regression.
+* Neural networks are learned using gradient descent, meaning their power isn't upper-bounded by the algorithms which programmers or mathematicians can feasibly design by hand.
 
 </details>
 
