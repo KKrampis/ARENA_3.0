@@ -1731,12 +1731,14 @@ To emphasize - unlike in your previous functions where you used the distance of 
 # ! FILTERS: []
 # ! TAGS: []
 
+device = t.device("mps" if t.backends.mps.is_available() else "cuda" if t.cuda.is_available() else "cpu")
+
 def raytrace_mesh_lambert(
     rays: Float[Tensor, "nrays points=2 dims=3"],
     triangles: Float[Tensor, "ntriangles points=3 dims=3"],
     light: Float[Tensor, "dims=3"],
     ambient_intensity: float,
-    device: str = "cuda",
+    device: str = device,
 ) -> Float[Tensor, " nrays"]:
     """
     For each ray, return the intensity of light hitting the triangle it intersects with (or zero if
